@@ -22,7 +22,7 @@ def getLastDate(cur):
 
 def updateData():
     query = string.Template('https://www.ksl.com/auto/search/index?p=&priceFrom=1&priceTo=20000&miles=25&keyword=van&page=$page_num&cx_navSource=hp_search')
-    query = string.Template('http://www.ksl.com/auto/search/index?p=&priceFrom=1&priceTo=20000&miles=50&newUsed[]=Used&sellerType[]=For%20Sale%20By%20Owner&page=$page_num&cx_navSource=hp_search')
+    # query = string.Template('http://www.ksl.com/auto/search/index?p=&priceFrom=1&priceTo=20000&miles=50&newUsed[]=Used&sellerType[]=For%20Sale%20By%20Owner&page=$page_num&cx_navSource=hp_search')
     query_page = requests.get(query.substitute(page_num=0))
     soup = BeautifulSoup(query_page.text)
     BASE_URL = 'https://www.ksl.com'
